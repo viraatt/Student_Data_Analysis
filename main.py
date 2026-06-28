@@ -4,19 +4,29 @@ from src.transform import transform_data, filter_data
 from src.analyze import analyze_data, sort_data, group_data, stats_analysis
 from src.report import generate_report
 from src.visualize import run_visualizations
+import os
 
-df = None
+def clear():
+    os.system("cls")
+def run_dependencies(verbose=False):
+    df = load_data()
+    if verbose:
+        display_basic_info(df)
+        inspect_data(df)
+    df = clean_data(df)
+    df = transform_data(df)
+    filter_data(df)
+    return df
+
 
 def main_menu():
     print("\n==== STUDENT DATA ANALYSIS ====")
-    print("1. Load Data")
+    print("1. View Data Info")
     print("2. Inspect Data")
-    print("3. Clean Data")
-    print("4. Transform + Filter")
-    print("5. Analyze Data")
-    print("6. Generate Report")
-    print("7. Show Visualizations")
-    print("8. Run Everything")
+    print("3. Analyze Data")
+    print("4. Generate Report")
+    print("5. Show Visualizations")
+    print("6. Run Everything")
     print("0. Exit")
 
 while True:
@@ -24,38 +34,36 @@ while True:
     choice = input("\nEnter your choice: ")
 
     if choice == "1":
-        df = load_data()
+        clear()
+        df = run_dependencies()
         display_basic_info(df)
 
     elif choice == "2":
+        clear()
+        df = run_dependencies()
         inspect_data(df)
 
     elif choice == "3":
-        df = clean_data(df)
-
-    elif choice == "4":
-        df = transform_data(df)
-        filter_data(df)
-
-    elif choice == "5":
+        clear()
+        df = run_dependencies()
         analyze_data(df)
         sort_data(df)
         group_data(df)
         stats_analysis(df)
 
-    elif choice == "6":
+    elif choice == "4":
+        clear()
+        df = run_dependencies()
         generate_report(df)
 
-    elif choice == "7":
+    elif choice == "5":
+        clear()
+        df = run_dependencies()
         run_visualizations(df)
 
-    elif choice == "8":
-        df = load_data()
-        display_basic_info(df)
-        inspect_data(df)
-        df = clean_data(df)
-        df = transform_data(df)
-        filter_data(df)
+    elif choice == "6":
+        clear()
+        df = run_dependencies(verbose=True)
         analyze_data(df)
         sort_data(df)
         group_data(df)
@@ -64,8 +72,10 @@ while True:
         run_visualizations(df)
 
     elif choice == "0":
+        clear()
         print("Goodbye!")
         break
 
     else:
+        clear()
         print("Invalid choice, try again!")
