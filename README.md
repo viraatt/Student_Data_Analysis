@@ -1,13 +1,9 @@
----
+# Student Performance Data Analysis System
 
-## How to Run
+A data analysis project built with Python and Pandas that processes
+student records and generates meaningful insights.
 
-```bash
-pip install pandas
-python main.py
-```
 
----
 
 ## Module Breakdown
 
