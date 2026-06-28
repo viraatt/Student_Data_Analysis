@@ -48,6 +48,9 @@ first/last rows, shape, column names and data types.
 ---
 
 ## Performance Score Formula
+
+    Score = (Marks * 0.60) + (Attendance * 0.25) + (StudyHours * 0.15)
+
 Marks carry the most weight, attendance second, study hours third.
 
 ---
