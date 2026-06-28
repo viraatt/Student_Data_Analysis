@@ -69,3 +69,6 @@ def stats_analysis(df):
     # checking how marks and attendance relate to each other
     print("\nCorrelation (Marks vs Attendance):")
     print(df[["Marks", "Attendance"]].corr().round(3))
+
+    print("\nCorrelation between marks and Study hours")
+    print(df[["Marks","StudyHours"]].corr().round())
