@@ -5,39 +5,15 @@ student records and generates meaningful insights.
 
 ---
 
-## Project Structure
-
-    Student_Data_Analysis/
-    ├── data/
-    │   └── student_dataset_v2.csv   # Raw input data
-    ├── output/
-    │   ├── cleaned_data.csv         # After cleaning
-    │   ├── toppers.csv              # Grade A students
-    │   ├── failed_students.csv      # Students who failed
-    │   ├── low_attendance.csv       # Attendance below 75%
-    │   ├── high_study_hours.csv     # Study hours above 8
-    │   ├── report.csv               # Final summary report
-    │   └── charts/
-    │       ├── grade_bar.png        # Grade bar chart
-    │       ├── grade_pie.png        # Grade pie chart
-    │       └── marks_vs_attendance  # Scatter plot
-    ├── src/
-    │   ├── load_data.py             # Module 1
-    │   ├── clean_data.py            # Module 2 and 3
-    │   ├── transform.py             # Module 4 and 5
-    │   ├── analyze.py               # Module 6 to 9
-    │   ├── report.py                # Module 10 and 11
-    │   └── visualize.py             # Bonus: charts
-    ├── main.py                      # Run this
-    └── README.md                    # You are here
-
----
 
 ## How to Run
 
     pip install pandas matplotlib
     python main.py
 
+    or
+
+    
 ---
 
 ## Module Breakdown
@@ -93,20 +69,6 @@ Low attendance penalizes the grade by one level.
     Score = (Marks * 0.60) + (Attendance * 0.25) + (StudyHours * 0.15)
 
 Marks carry the most weight, attendance second, study hours third.
-
----
-
-## What I Learned
-
-- How to load and explore a dataset using Pandas
-- How to find and fix missing values and duplicates
-- How to validate data and remove bad entries
-- How to create new columns using apply and custom functions
-- How to filter data into subsets and save them as CSV files
-- How to group data and calculate aggregates using groupby
-- How to compute basic statistics like mean, median, mode and correlation
-- How to generate charts using Matplotlib
-- How to organize a Python project into modules
 
 ---
 
